@@ -8,7 +8,7 @@ import HoverHighlighter from "./HoverHighlighter";
 import IframeBrowser from "./IframeBrowser";
 
 const SafariBrowser = () => {
-  const [url, setUrl] = useState('https://example.com');
+  const [url, setUrl] = useState('https://tauri.app/fr/');
   const [hoveredElement, setHoveredElement] = useState(null);
 
   const handleElementHover = (element: any) => {
