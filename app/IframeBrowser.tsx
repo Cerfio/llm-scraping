@@ -4,7 +4,7 @@ const IframeBrowser = ({ url, onElementHover } : { url: string, onElementHover: 
   const iframeRef = useRef(null);
 
   useEffect(() => {
-    const iframe = iframeRef.current;
+    const iframe = iframeRef.current as any;
     const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
 
     const injectStyles = () => {
@@ -18,13 +18,13 @@ const IframeBrowser = ({ url, onElementHover } : { url: string, onElementHover: 
       iframeDocument.head.appendChild(style);
     };
 
-    const handleMouseOver = (event) => {
+    const handleMouseOver = (event: any) => {
       const target = event.target;
       target.classList.add('hover-highlight');
       onElementHover(target); // Capture l'élément survolé
     };
 
-    const handleMouseOut = (event) => {
+    const handleMouseOut = (event: any) => {
       const target = event.target;
       target.classList.remove('hover-highlight');
     };
